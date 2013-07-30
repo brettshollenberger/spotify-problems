@@ -7,3 +7,5 @@ When some songs are better than others, those will be listened to more often tha
 Specifically, suppose that song i has been played fi times but that Zipf’s Law predicts that it would have been played zi times. 
 
 Then you define the quality of song i to be qi = fi / zi. Your software should select the songs with the highest values of qi."
+
+** All problems solved in both Ruby and Python
