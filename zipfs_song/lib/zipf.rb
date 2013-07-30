@@ -1,3 +1,5 @@
+#!/usr/bin/env ruby
+
 class Zipfer < Hash
 
   attr_accessor :tracklist
@@ -37,3 +39,4 @@ class Track
     (f / z).to_i
   end
 end
+

@@ -3,6 +3,7 @@
 from __future__ import division
 import sys
 import re
+import time
 
 class Zipfer:
 
@@ -14,7 +15,9 @@ class Zipfer:
             self.index += 1
 
     def best_tracks(self, how_many):
-        return [(x[0]) for x in sorted(self.tracklist.items(), key=lambda x:x[1].q())][::-1][0:how_many]
+        tracks = [(x[0]) for x in sorted(self.tracklist.items(), key=lambda x:x[1].q())][::-1][0:how_many]
+        for track in tracks:
+            print track
 
 
 class Track:
@@ -44,7 +47,14 @@ def line_reader():
     for num in range(n):
         tracklist.append(sys.stdin.readline().split())
     z = Zipfer(tracklist)
-    print z.best_tracks(m)
+    start = time.time()
+    z.best_tracks(m)
+    end = time.time()
+    print end - start
     line_reader()
 
-line_reader()
+while 1:
+    try:
+        line_reader()
+    except KeyboardInterrupt:
+        break
