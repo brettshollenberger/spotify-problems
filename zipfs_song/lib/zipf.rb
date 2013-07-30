@@ -10,6 +10,10 @@ class Zipfer < Hash
     end
   end
 
+  def f(track)
+    self[track][0]
+  end
+
   def z(track)
     1 / self[track][1]
   end

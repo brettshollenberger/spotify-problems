@@ -11,6 +11,13 @@ describe Zipfer do
     
   let(:zipfer) { Zipfer.new(tracklist) }
 
+  it "computes the f value for a song" do
+    expect(zipfer.f("one")).to eql(30)
+    expect(zipfer.f("two")).to eql(30)
+    expect(zipfer.f("three")).to eql(15)
+    expect(zipfer.f("four")).to eql(25)
+  end
+
   it "computes the z value for a song" do
     expect(zipfer.z("one")).to eql(1)
     expect(zipfer.z("two")).to eql(1/2)
